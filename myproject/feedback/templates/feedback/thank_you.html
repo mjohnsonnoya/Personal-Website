@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container-fluid p-1">
+    <div class="card bg-dark shadow card-body"> 
+        <div class="row justify-content-center feedback-container">
+            <section class="col-12 feedback-form my-2">
+                <h1 class="text-center">Thank you!</h1>
+            </section>
+        
+            {% if interesting_feedback %}
+                <section class="col-12 interesting-feedback my-2">
+                    <h2 class="text-center">Check out what people have to say:</h2>
+                    {% for feedback in interesting_feedback %}
+                    <div class="card feedback-entry my-3">
+                        <div class="card-header">
+                            {{ feedback.created_at }}
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">{{ feedback.content }}</p>
+                        </div>
+                        <div class="card-footer comment-indent">
+                            <p class="card-text">{{ feedback.comments }}</p>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </section>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+<!-- <script src="https://cdn.jsdelivr.net/npm/confetti.js"></script>
+<script>
+    // Display confetti effect on page load
+    var confettiSettings = { target: 'confetti-canvas' };
+    var confetti = new ConfettiGenerator(confettiSettings);
+    confetti.render();
+
+    // Stop confetti after a certain duration (in milliseconds)
+    setTimeout(function() {
+        confetti.clear();
+    }, 5000);  // Adjust the duration as desired
+</script> -->
+{% endblock %}

@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container-fluid p-1">
+    <div class="card bg-dark shadow card-body"> 
+        <div class="row justify-content-center feedback-container">
+            <section class="col-12 feedback-form my-2">
+                <h1 class="text-center">What's on your mind?</h1>
+                <div class="explainer-text">
+                    <p>Don't hesitate to reach out with any questions, suggestions, or comments you might have. Anything that I find helpful, funny, interesting, or insightful, I'll be sure to share it on my website, while keeping it anonymous. It's a way to spread the goodness and let others benefit from it too.</p>
+                    <p>Looking forward to seeing what you have to say!</p>
+                </div>
+                <form method="post" class="needs-validation" novalidate>
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="id_content">Feedback:</label>
+                        {{ form.content }}
+                    </div>
+                    <button class="btn btn-primary btn-lg btn-block submit-button" type="submit">Submit</button>
+                </form>
+            </section>
+    
+            {% if interesting_feedback %}
+                <section class="col-12 interesting-feedback my-2">
+                    <h2 class="text-center">Check out what people have to say:</h2>
+                    {% for feedback in interesting_feedback %}
+                    <div class="card feedback-entry my-3">
+                        <div class="card-header">
+                            {{ feedback.created_at }}
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">{{ feedback.content }}</p>
+                        </div>
+                        <div class="card-footer {% if feedback.comments %}comment-indent{% endif %}">
+                            <p class="card-text">{{ feedback.comments }}</p>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </section>
+            {% endif %}
+
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+

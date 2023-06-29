@@ -1,0 +1,106 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="container-fluid p-1">
+    <div class="card bg-dark shadow card-body">
+        <div class="row g-0">
+            <div class="col-sm-12 col-md-6">
+                <img src="{% static 'myapp/images/marcos.png' %}" alt="My Image" class="img-fluid rounded-start">
+            </div>
+            <div class="col-sm-12 col-md-6">
+                <div class="card-body">
+                    <h1 class="card-title">
+                        <span class="typing-text"></span>
+                    </h1>
+                    
+                    <p class="card-text">I'm an undergraduate at Harvard studying computer science and Spanish. </p>
+                    <h2 class="card-title mt-custom">
+                        Life Updates and Fun Facts
+                    </h2>
+
+                    <ul>
+                        <li>05/14/23: Finished first year at college!</li>
+                        <li><strong>Favorite Song:</strong> Home Resonance</li>
+                        <li>02/15/23: Went on retreat to Maine as a part of Hoffman Lab</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+<div class="container-fluid p-1">
+    <div class="card bg-dark shadow card-body">
+        <div class="row g-0">
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
+                <h2 class="text-center"> Adventurer, innovator, researcher.</h2>
+
+                <p>Currently, I'm deeply engaged in enhancing the efficiency of scanning tunneling microscopy, and in doing so, pushing the frontiers of quantum science at Hoffman Labs and the Harvard Quantum Initiative. During my downtime, I'm putting together my first EP for Soundcloud, while persistently working on self-improvement and self-directed learning.</p>
+                
+                <p>
+                    Raised in Southeast Wyoming, home to the University of Wyoming, I was shaped by its peaceful and natural environment. My household, blending cultures from California and Spain, instilled in me a curiosity and appreciation for diversity.</p>
+                
+                <h4>I have a deep interest in:</h4>
+                <ul>
+                    <li>Environmentally sustainable technology</li>
+                    <li>Spanish and multilingual education</li>
+                    <li>Eating healthy</li>
+                    <li>AI & its intersection with the humanities</li>
+                </ul>
+                
+                <h4>Some things I love:</h4>
+                <ul>
+                    <li>Tennis & Rafael Nadal</li>
+                    <li>Spanish literature</li>
+                    <li>Cello & electronic music production (currently: classical, lo-fi)</li>
+                    <li>Sketch comedy</li>
+                    <li>Photoshop & digital media</li>
+                    <li>Basketball & the Denver Nuggets</li>
+                </ul>
+            </div>
+            <div class="col-md-1"></div>
+        </div>
+    </div>
+</div>
+
+<!-- CSS -->
+<style>
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+.typing-text::after {
+  content: '|';
+  animation: typing 1s steps(1) infinite;
+}
+
+.typing-text::after {
+  content: '';
+  animation: none;
+  visibility: hidden;
+}
+</style>
+
+<!-- JavaScript -->
+<script>
+// JavaScript code to start the typing animation
+document.addEventListener('DOMContentLoaded', function() {
+    const typingText = document.querySelector('.typing-text');
+    const textToType = 'Hi there!';
+
+    let i = 0;
+    function typeText() {
+        if (i < textToType.length) {
+            typingText.textContent += textToType.charAt(i);
+            i++;
+            setTimeout(typeText, 100);
+        }
+    }
+
+    typeText();
+});
+</script>
+{% endblock %}
