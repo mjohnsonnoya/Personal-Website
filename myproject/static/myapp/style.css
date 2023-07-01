@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@500&family=Quicksand&display=swap');
+
+/* General settings for the website */
+body.kawaii-theme {
+    font-family: 'Nunito Sans', sans-serif;
+    color: #A0AEC0;
+    background: #1A202C;
+}
+
+.navbar {
+    background-color: #2D3748;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.comment-indent {
+    padding-left: 30px; /* Adjust the value as needed */
+    border-left: 2px solid #ccc; /* Adjust the color and style as desired */
+  }
+  
+
+.navbar-brand,
+.nav-link {
+    color: #A0AEC0;
+}
+
+.nav-link.active,
+.nav-link:hover {
+    color: #63B3ED;
+}
+
+/* Card settings */
+.card {
+    background: #2D3748;
+    border-radius: 15px;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.card-body {
+    padding: 30px;
+}
+
+/* Footer settings */
+footer {
+    background-color: #2D3748;
+    color: #A0AEC0;
+}
+
+.footer {
+    margin-top: auto;
+}
+h1.text-center {
+    color: #63B3ED;
+    margin-bottom: 20px;
+}
+/* Heading settings */
+
+h1 {
+    color: #63B3ED;
+    margin-bottom: 20px;
+}
+h2.card-title, h1.card-title,
+h2.text-center {
+    color: #63B3ED;
+    margin-bottom: 20px;
+}
+
+.mt-custom {
+    margin-top: 4rem; /* Adjust the margin size as needed */
+}
+
+
+h4 {
+    color: #63B3ED;
+    margin-bottom: 10px;
+}
+h2 {
+    color: #A0AEC0;
+}
+p {
+    color: #A0AEC0;
+}
+
+h6.mb-4 {
+    font-style: italic;
+    color: #A0AEC0;
+}
+
+/* Paragraph settings */
+p.card-text {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.container-fluid p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+/* List settings */
+ul {
+    margin-bottom: 30px;
+}
+
+ul li {
+    line-height: 1.5;
+    color: #A0AEC0;
+}
+
+/* Image settings */
+.my-image {
+    padding-right: 15px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
+}
+
+.center-image {
+    display: block;
+    margin: auto;
+    border-radius: 15px;
+}
+
+.feedback-form, .interesting-feedback {
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.form-group input[type="text"],
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.form-group textarea {
+    height: 100px;
+}
+
+.submit-button {
+    display: inline-block;
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.submit-button:hover {
+    background-color: #45a049;
+}
+
+.explainer-text {
+    margin-bottom: 20px;
+}
+
+/* Typing animation */
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+#typing-text::after {
+    content: "";
+    display: inline-block;
+    width: 8px;
+    animation: typing 1s steps(60) infinite;
+}
+
+/* Responsive layout adjustments */
+@media (max-width: 576px) {
+    .my-image {
+        padding-right: 0;
+    }
+
+    .my-text {
+        padding-left: 0;
+    }
+}

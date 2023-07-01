@@ -11,7 +11,7 @@ class FeedbackAdmin(admin.ModelAdmin):
     list_filter = ('is_interesting',)
     search_fields = ('content',)
     readonly_fields = ('id', 'created_at')
-    fields = ('content', 'is_interesting', 'display_until')
+    fields = ('content', 'is_interesting', 'display_until','comments',)
     def save_model(self, request, obj, form, change):
             if obj.display_until is None and obj.is_interesting:
                 obj.display_until = timezone.now() + datetime.timedelta(days=7)  # Or whatever period you choose
